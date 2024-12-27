@@ -95,5 +95,13 @@ class Introduction {
          * the smaller type (byte/short), but it might cause loss of precision in float
          * or double.
          */
+
+        int x = 11;
+        long y = 100l;
+        long z;
+        int z2;
+
+        z = x + y; // Type Promotion
+        z2 = (int) (x + y); // Explicit Casting (Narrowing)
     }
 }
