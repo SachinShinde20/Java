@@ -50,6 +50,20 @@ class Introduction {
         System.out.println("Byte: " + r);
         System.out.println("Char: " + s);
 
+        // Casting -Example
+        // IEEE 754 floating-point standard for float and double uses exponential
+        // notation,
+        // allowing storage of larger values than int and long.
+        // In Java, implicit type casting (widening conversion) depends on the range
+        // and compatibility of data types, not just their size.
+        long ll = 999999999;
+        float ff = (float) ll * 9;
+        double dd = (double) ll * 9;
+
+        System.out.println("999999999 * 9 Result in: 8,99,99,99,991");
+        System.out.println("Float: " + ff);
+        System.out.println("Double: " + dd);
+
         /*********************************
          * Rules of Type Promotion
          **********************************/
