@@ -18,7 +18,7 @@ class Student {
      */
     public void getCall() {
         System.out.println("Inside getCall...");
-        this.show();
+        show(); // ->>> this.show(); ->>> By default "this" is present here
     }
 
     public void show() {
