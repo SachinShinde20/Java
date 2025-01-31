@@ -1,1 +1,73 @@
-Hello, This is An text File
+List of Checked Exceptions
+---------------------------
+Exception Class           	Description
+-------------------------------------------------------------------------
+IOException               	General I/O failure (file operations, network issues).
+FileNotFoundException     	File does not exist when trying to access it.
+EOFException              	Unexpected end of file or stream.
+InterruptedIOException    	I/O operation interrupted.
+SQLException              	Database access errors.
+BatchUpdateException      	Failure in batch database update.
+ClassNotFoundException    	Class not found at runtime.
+CloneNotSupportedException 	Cloning not supported for an object.
+InstantiationException    	Cannot instantiate an abstract class or interface.
+InterruptedException      	A thread is interrupted while sleeping or waiting.
+NoSuchFieldException      	Accessing a non-existing field via reflection.
+NoSuchMethodException     	Calling a method that does not exist.
+ReflectiveOperationException 	Superclass of reflection-related exceptions.
+MalformedURLException     	Invalid URL format.
+UnknownHostException      	DNS lookup failure for a hostname.
+
+
+List of Unchecked Exceptions
+-----------------------------
+Exception Class           	Description
+-------------------------------------------------------------------------
+ArithmeticException       	Division by zero.
+ArrayIndexOutOfBoundsException 	Accessing an array index out of bounds.
+ArrayStoreException       	Inserting incorrect type in an array.
+ClassCastException        	Invalid type casting.
+EnumConstantNotPresentException Enum constant does not exist.
+IllegalArgumentException  	Invalid argument passed to a method.
+NumberFormatException     	Invalid numeric conversion (e.g., "abc" to int).
+InvalidParameterException 	Invalid method parameter.
+IllegalStateException     	Inappropriate method call for object state.
+IndexOutOfBoundsException 	Invalid index access in lists, strings, etc.
+StringIndexOutOfBoundsException Invalid string index.
+NullPointerException      	Calling a method on a null reference.
+SecurityException         	Security violation detected.
+TypeNotPresentException   	Requested class is not available.
+ConcurrentModificationException Modifying a collection while iterating.
+EmptyStackException       	Popping from an empty stack.
+MissingResourceException  	Resource not found.
+NoSuchElementException    	Accessing a missing element.
+UnknownFormatConversionException Invalid format specifier in `printf()`.
+
+
+List of Errors
+----------------------------
+Error Class               	Description
+-------------------------------------------------------------------------
+AssertionError            	Thrown when assert statement fails.
+LinkageError              	Issues during class loading/linking.
+ClassCircularityError     	Class references itself indirectly.
+ClassFormatError          	Invalid class file format.
+ExceptionInInitializerError 	Exception in static initializer block.
+IncompatibleClassChangeError 	Class definition has changed incompatibly.
+NoClassDefFoundError      	Class not found at runtime.
+UnsupportedClassVersionError 	Class compiled with a newer Java version.
+OutOfMemoryError          	JVM runs out of memory.
+StackOverflowError        	Infinite recursion causes stack overflow.
+ThreadDeath               	A thread is forcefully killed.
+VirtualMachineError       	Critical JVM errors.
+InternalError             	Unexpected internal JVM error.
+UnknownError              	Unknown JVM error.
+
+
+Summary Table
+-------------
+Category                   Parent Class  	Needs Handling?      		Examples
+-------------------------------------------------------------------------------------------------------------------
+Checked Exceptions         Exception     	Yes (try-catch or throws) 	IOException, SQLException, ClassNotFoundException
+Unchecked Exceptions       RuntimeException 	No (but can be handled) 	NullPointerException, ArrayIndexOutOfBoundsException
+Errors                     Error         	No (JVM/System failures)   	OutOfMemoryError, StackOverflowError
