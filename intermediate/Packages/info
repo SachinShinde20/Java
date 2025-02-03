@@ -1,0 +1,30 @@
+Amazon and Project are two different projects.  
+To run the project, we must be in the **parent folder** of the `com` directory.
+
+Then, compile the Java files using:
+
+```sh
+javac com/project/main/Calc.java
+```
+
+or
+
+```sh
+javac com/project/math/CalculationsModule.java com/project/main/Calc.java
+```
+
+To run the program, use:
+
+```sh
+java com.project.main.Calc
+```
+
+### **Output:**
+
+```
+Addition: 13.0
+Subtraction: 2.5
+Multiplication: 30.25
+Division: 3.0303030303030303
+Modulus: 0.0
+```
