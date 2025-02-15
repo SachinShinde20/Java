@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class ArrayListEx2 {
@@ -82,5 +83,83 @@ public class ArrayListEx2 {
         System.out.println("\nRemoving all even numbers from List 3...");
         list3.removeIf(n -> n % 2 == 0);
         System.out.println("Updated List 3: " + list3);
+
+        /*
+         * Sorting
+         */
+        // 1
+        System.out.println("\n******* Sorting (sort) *******");
+        list3.add(5);
+        list3.add(1);
+        list3.add(3);
+        System.out.println("List 1: \n" + list3);
+
+        Collections.sort(list3);
+        System.out.println("Sorted: " + list3);
+
+        // Reverse
+        Collections.sort(list3, Collections.reverseOrder());
+        System.out.println("Reverse Sorted: " + list3);
+
+        // 2
+        System.out.println("\nList 2: \n" + list1);
+
+        Collections.sort(list1);
+        System.out.println("Sorted: " + list1);
+
+        // Reversed
+        Collections.sort(list1, Collections.reverseOrder());
+        System.out.println("Reverse Sorted: " + list1);
+
     }
 }
+
+/*
+ * List 1: [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan]
+ * List 2: [Jyoti, Sakshi]
+ * 
+ * HashCode of List 1: 755915550
+ * HashCode of List 2: 407860963
+ * 
+ * Is list1 equal to itself? true
+ * Is list1 equal to list2? false
+ * 
+ * Using forEach:
+ * Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
+ * 
+ * Using Iterator:
+ * Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
+ * 
+ * List 3: [8, 0, 3, 9, 0, 2, 7, 0]
+ * 
+ * Using Iterator for List 3:
+ * 8 0 3 9 0 2 7 0
+ * 
+ * Checking Even or Odd using forEach:
+ * Even: 8
+ * Even: 0
+ * Odd: 3
+ * Odd: 9
+ * Even: 0
+ * Even: 2
+ * Odd: 7
+ * Even: 0
+ * 
+ * Removing all 0s from List 3...
+ * Updated List 3: [8, 3, 9, 2, 7]
+ * 
+ * Removing all even numbers from List 3...
+ * Updated List 3: [3, 9, 7]
+ ******* 
+ * Sorting (sort) *******
+ * List 1:
+ * [3, 9, 7, 5, 1, 3]
+ * Sorted: [1, 3, 3, 5, 7, 9]
+ * Reverse Sorted: [9, 7, 5, 3, 3, 1]
+ * 
+ * List 2:
+ * [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan]
+ * Sorted: [Atharv, Jyoti, Kedar, Omkar, Rohan, Rohan, Sakshi]
+ * Reverse Sorted: [Sakshi, Rohan, Rohan, Omkar, Kedar, Jyoti, Atharv]
+ * 
+ */

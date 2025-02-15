@@ -167,3 +167,61 @@ public class ArrayListEx1 {
         System.out.println();
     }
 }
+
+/*
+ * Initial Lists:
+ * List 1: [A, B, C, Z]
+ * List 2: [W, X, Y]
+ * 
+ * After adding 'a' and 'b' in List 1:
+ * List 1: [A, a, B, b, C, Z]
+ * 
+ * After adding List 2 to List 1 at index 5:
+ * List 1: [A, a, B, b, C, W, X, Y, Z]
+ * List 2 (unchanged): [W, X, Y]
+ * 
+ * Final List 1: [A, a, B, b, C, W, X, Y, Z]
+ * Size of List 1: 9
+ * 
+ * Elements of List 1 using loop:
+ * A a B b C W X Y Z
+ * 
+ * Set (C -> c): [A, a, B, b, c, W, X, Y, Z]
+ * 
+ * >>> Java 21 Feature <<<
+ * First Element: A
+ * Last Element: Z
+ ******* 
+ * Remove Operations *******
+ * After removing index 1 (element 'a'): [A, B, b, c, W, X, Y, Z]
+ * After removing character 'b': [A, B, c, W, X, Y, Z]
+ * After removing all elements of List 2 from List 1: [A, B, c, Z]
+ * After removeIf (removing 'Z'): [A, B, c]
+ * 
+ * List 2 after removeFirst() & removeLast(): [X]
+ * List 2 after clear(): []
+ * 
+ * Is List 1 Empty? false
+ * Is List 2 Empty? true
+ ***************************************************************
+ * 
+ * 
+ * List 3: [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan, Kedar, Manoj]
+ * 
+ * First occurrence of 'Rohan': 2
+ * Last occurrence of 'Rohan': 6
+ * 
+ * Does List 3 contain 'Jyoti'? true
+ * Does List 3 contain all elements of List 4? true
+ * 
+ * Sublist (0 to 5): [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv]
+ * Cloned List (using clone()): [Sakshi, Jyoti]
+ * Cloned List (using constructor): [Sakshi, Jyoti]
+ * Size of list5 before trimToSize(): 2
+ * Size of list5 after trimToSize(): 2
+ ************** 
+ * toArray **************
+ * Array from list3: Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan Kedar Manoj
+ * Array from list6: 1 2 3 4 5
+ * 
+ */
