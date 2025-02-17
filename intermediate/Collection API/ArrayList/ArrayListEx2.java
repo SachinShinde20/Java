@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class ArrayListEx2 {
     public static void main(String[] args) {
@@ -31,13 +32,17 @@ public class ArrayListEx2 {
         System.out.println("\nIs list1 equal to itself? " + list1.equals(list1)); // Always true
         System.out.println("Is list1 equal to list2? " + list1.equals(list2)); // false
 
-        // Iterating using forEach (Lambda Expression)
-        System.out.println("\nUsing forEach:");
+        System.out.println("\n**********************");
+        // forEach (Lambda Expression)
+        // Use forEach if you only need to read/process elements (no modification).
+        System.out.println("Using forEach: (Use forEach if you only need to read/process elements (no modification).)");
         list1.forEach(name -> System.out.print(name + " "));
         System.out.println();
 
+        System.out.println("\n**********************");
         // Iterating using Iterator
-        System.out.println("\nUsing Iterator:");
+        // Use Iterator if you only need to remove elements while iterating.
+        System.out.println("Using Iterator: (Use Iterator if you only need to remove elements while iterating.)");
         Iterator<String> it = list1.iterator();
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
@@ -111,55 +116,82 @@ public class ArrayListEx2 {
         Collections.sort(list1, Collections.reverseOrder());
         System.out.println("Reverse Sorted: " + list1);
 
+        System.out.println("\n\n********** ListIterator **********");
+        System.out.println("List 3: " + list3);
+        // ListIterator
+        // Use ListIterator if you need to add, remove, or modify elements.
+        // ListIterator is specifically designed for iterating through elements in a
+        // List, meaning it is only used for list iteration
+        ListIterator<Integer> lit = list3.listIterator();
+        while (lit.hasNext()) {
+            int n = lit.next();
+
+            if (n == 1) {
+                lit.remove(); // Removes 1 from the list safely
+            } else if (n % 2 != 0) {
+                lit.set(n + 1); // Replaces odd numbers with the next even number
+            }
+        }
+
+        System.out.println("After Iterating: " + list3);
+
     }
 }
 
-/*
- * List 1: [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan]
- * List 2: [Jyoti, Sakshi]
- * 
- * HashCode of List 1: 755915550
- * HashCode of List 2: 407860963
- * 
- * Is list1 equal to itself? true
- * Is list1 equal to list2? false
- * 
- * Using forEach:
- * Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
- * 
- * Using Iterator:
- * Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
- * 
- * List 3: [8, 0, 3, 9, 0, 2, 7, 0]
- * 
- * Using Iterator for List 3:
- * 8 0 3 9 0 2 7 0
- * 
- * Checking Even or Odd using forEach:
- * Even: 8
- * Even: 0
- * Odd: 3
- * Odd: 9
- * Even: 0
- * Even: 2
- * Odd: 7
- * Even: 0
- * 
- * Removing all 0s from List 3...
- * Updated List 3: [8, 3, 9, 2, 7]
- * 
- * Removing all even numbers from List 3...
- * Updated List 3: [3, 9, 7]
- ******* 
- * Sorting (sort) *******
- * List 1:
- * [3, 9, 7, 5, 1, 3]
- * Sorted: [1, 3, 3, 5, 7, 9]
- * Reverse Sorted: [9, 7, 5, 3, 3, 1]
- * 
- * List 2:
- * [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan]
- * Sorted: [Atharv, Jyoti, Kedar, Omkar, Rohan, Rohan, Sakshi]
- * Reverse Sorted: [Sakshi, Rohan, Rohan, Omkar, Kedar, Jyoti, Atharv]
- * 
- */
+// List 1:[Kedar,Omkar,Rohan,Jyoti,Sakshi,Atharv,Rohan]List 2:[Jyoti,Sakshi]
+
+// HashCode of List 1:755915550
+// HashCode of List 2:407860963
+
+// Is list1
+// equal to itself?true
+// Is list1
+// equal to list2?false
+
+// **********************
+// Using forEach:(
+// Use forEach if
+// you only
+// need to read/process elements (no modification).)
+// Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
+
+// **********************
+// Using Iterator: (Use Iterator if you only need to remove elements while
+// iterating.)
+// Kedar Omkar Rohan Jyoti Sakshi Atharv Rohan
+
+// List 3: [8, 0, 3, 9, 0, 2, 7, 0]
+
+// Using Iterator for List 3:
+// 8 0 3 9 0 2 7 0
+
+// Checking Even or Odd using forEach:
+// Even: 8
+// Even: 0
+// Odd: 3
+// Odd: 9
+// Even: 0
+// Even: 2
+// Odd: 7
+// Even: 0
+
+// Removing all 0s from List 3...
+// Updated List 3: [8, 3, 9, 2, 7]
+
+// Removing all even numbers from List 3...
+// Updated List 3: [3, 9, 7]
+
+// ******* Sorting (sort) *******
+// List 1:
+// [3, 9, 7, 5, 1, 3]
+// Sorted: [1, 3, 3, 5, 7, 9]
+// Reverse Sorted: [9, 7, 5, 3, 3, 1]
+
+// List 2:
+// [Kedar, Omkar, Rohan, Jyoti, Sakshi, Atharv, Rohan]
+// Sorted: [Atharv, Jyoti, Kedar, Omkar, Rohan, Rohan, Sakshi]
+// Reverse Sorted: [Sakshi, Rohan, Rohan, Omkar, Kedar, Jyoti, Atharv]
+
+// ********** ListIterator **********
+// List 3: [9, 7, 5, 3, 3, 1]
+// After Iterating: [10, 8, 6, 4, 4]
