@@ -11,9 +11,6 @@ public class Book {
         this.price = price;
     }
 
-    public Book() {
-    }
-
     @Override
     public String toString() {
         return id + ",\t" + name + "\t" + author + "\t" + price + "\n";
