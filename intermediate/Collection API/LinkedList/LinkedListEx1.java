@@ -55,9 +55,12 @@ public class LinkedListEx1 {
         System.out.println("PeekLast(): " + ll.peekLast()); // Retrieves last element
         System.out.println("After peek operations: " + ll);
 
-        // Using push method (equivalent to addFirst)
+        // Using push method (equivalent to addFirst - Works like stack)
         ll.push(12);
         System.out.println("\nAfter push operation: " + ll);
+        // Using pop method (equivalent to removeFirst - Works like stack)
+        ll.pop();
+        System.out.println("After pop operation: " + ll);
 
         // Sorting the LinkedList in ascending order
         Collections.sort(ll);
@@ -113,3 +116,53 @@ public class LinkedListEx1 {
         System.out.println("\nAfter adding 1 to all odd numbers using ListIterator:\n" + ll);
     }
 }
+
+/*
+ * 
+ * Initial LinkedList:[10,25,43,15,21]
+ * 
+ * After addFirst
+ * and addLast:[2,10,25,43,15,21,70]
+ * 
+ * Offer 30:true OfferFirst 5:true OfferLast 75:true
+ * After offer operations:[5,2,10,25,43,15,21,70,30,75]
+ * 
+ * Poll(): 5
+ * PollFirst(): 2
+ * PollLast(): 75
+ * After poll operations: [10, 25, 43, 15, 21, 70, 30]
+ * 
+ * Peek(): 10
+ * PeekFirst(): 10
+ * PeekLast(): 30
+ * After peek operations: [10, 25, 43, 15, 21, 70, 30]
+ * 
+ * After push operation: [12, 10, 25, 43, 15, 21, 70, 30]
+ * After pop operation: [10, 25, 43, 15, 21, 70, 30]
+ * 
+ * After sorting (ascending order): [10, 15, 21, 25, 30, 43, 70]
+ * 
+ * After sorting (descending order): [70, 43, 30, 25, 21, 15, 10]
+ * 
+ * After removeIf (removing even numbers): [43, 25, 21, 15]
+ ***********************************
+ * 
+ * 
+ * New LinkedList:
+ * [12, 21, 43, 25, 21, 15]
+ * Removed First Occurrence of 21: true
+ * [12, 43, 25, 21, 15]
+ * Removed Last Occurrence of 21: true
+ * [12, 43, 25, 15]
+ ***********************************
+ * 
+ * 
+ * Printing LinkedList using Descending Iterator:
+ * 15 25 43 12
+ * 
+ * Printing LinkedList using Iterator:
+ * 12 43 25 15
+ * 
+ * After adding 1 to all odd numbers using ListIterator:
+ * [12, 44, 26, 16]
+ */
