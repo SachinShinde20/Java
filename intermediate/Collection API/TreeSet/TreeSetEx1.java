@@ -1,6 +1,7 @@
 import java.util.Objects;
 import java.util.TreeSet;
 
+//For custom objects storing we need to use comparable or comparator for defining the sequence/indexing
 class Employee implements Comparable<Employee> {
     int id;
     String name;
@@ -12,17 +13,22 @@ class Employee implements Comparable<Employee> {
         this.salary = salary;
     }
 
-    // Sorting employees by salary, then by ID if salaries are equal
+    // Sorting employees by salary, then by ID, then by name (if necessary)
     @Override
     public int compareTo(Employee e) {
-        int salaryComparison = Double.compare(this.salary, e.salary);
-        return (salaryComparison != 0) ? salaryComparison : Integer.compare(this.id, e.id);
+        int cmp = Double.compare(this.salary, e.salary);
+        if (cmp != 0) return cmp;
+
+        cmp = Integer.compare(this.id, e.id);
+        if (cmp != 0) return cmp;
+
+        return this.name.compareTo(e.name); // Compare by name if everything else is equal
     }
 
-    // Ensuring proper equality check for the contains() method in TreeSet
+    // Ensuring proper equality check for TreeSet's contains() method
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;  // Same object reference
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         return id == employee.id &&
@@ -40,6 +46,7 @@ class Employee implements Comparable<Employee> {
         return "\nid=" + id + ", name='" + name + "', salary=" + salary;
     }
 }
+
 
 public class TreeSetEx1 {
     public static void main(String[] args) {
