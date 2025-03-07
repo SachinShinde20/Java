@@ -61,17 +61,37 @@ public class HashMapEx2 {
         // Getting value associated with a key
         System.out.println("Value for key 1003: " + hashMap.get(1003));
 
+
+
+        // Iterating Map Using Advanced ForLoop
+        System.out.println("\nIterating Map Using Advanced ForLoop");
+        Set<Map.Entry<Integer, Order>> set = hashMap.entrySet();
+        for (Map.Entry<Integer, Order> record: set){
+            if (record.getKey()==null){
+                record.setValue(new Order(" - ", 0, 0));
+            }
+            System.out.println("Key: " + record.getKey() + ", \tValue: " + record.getValue());
+        }
+
+        /*
+        Why is modifying set affecting hashMap?
+        Since entrySet() provides a view (reference) of the actual map, any modifications made to the elements of set directly reflect on the original hashMap.
+        This means that if we modify a Map.Entry from the set, we are actually modifying the corresponding entry inside HashMap.
+         */
+        System.out.println("\nAfter Modification: " + hashMap);
+
+
+
         // Using Iterator to remove null key
         System.out.println("\nUsing Iterator");
         Iterator<Map.Entry<Integer, Order>> it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry<Integer, Order> entry = it.next();
-            if (entry.getKey() == null) {
-                System.out.println("Found null key, removing it");
+        while (it.hasNext()){
+            Map.Entry<Integer, Order> record = it.next();
+            if (record.getKey()==null){
                 it.remove();
-            } else {
-                System.out.println("Key: " + entry.getKey() + ", \tValue: " + entry.getValue());
+                continue; //Skip This Iteration
             }
+            System.out.println("Key: " + record.getKey() + ", \tValue: " + record.getValue());
         }
 
         // Printing HashMap after removal of null key
