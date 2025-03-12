@@ -44,8 +44,21 @@ public class HashMapEx1 {
         System.out.println("\nDoes HashMap 1 contain key 4? " + hMap.containsKey(4));
         System.out.println("Does HashMap 1 contain value 'Shreyas'? " + hMap.containsValue("Shreyas"));
 
+
         // Retrieving a value based on a key
-        System.out.println("Value for key 1: " + hMap.get(1));
+        System.out.println("\nValue for key 1: " + hMap.get(1));
+
+        // `.getOrDefault()` attempts to retrieve the value associated with key `5`. Since key `5` is not present, it returns the default value: `"No Values Found"`.
+        System.out.println(hMap.getOrDefault(5, "No Values Found"));
+        // `.getOrDefault()` tries to retrieve the value for key `99`. As key `99` is also absent, it again returns the default value.
+        System.out.println(hMap.getOrDefault(99, "No Values Found"));
+
+        // Using `putIfAbsent()` - Adds the entry only if the key is not already present.
+        hMap.putIfAbsent(1, "Chahal"); //Not added
+        System.out.println(hMap);
+
+        hMap.putIfAbsent(11, "Chahal"); //Added
+        System.out.println(hMap);
 
         // Using putIfAbsent() - Only adds if key 6 is absent or mapped to null
         hMap.putIfAbsent(6, "Kuldeep");
