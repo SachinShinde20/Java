@@ -1,0 +1,31 @@
+What Happens Internally When start() is Called?
+When we call start(), the following steps occur:
+
+Step 1: Creatin a New Thread (Before start())
+•	When we create a Thread object, Java does not create an OS-level thread immediately.
+•	The object exists in the New state.
+
+Step 2: Invoking start()
+•	When start() is called, the JVM interacts with the operating system's thread scheduler to allocate a thread.
+•	The thread is moved to the Runnable state, meaning it's ready to run when the CPU schedules it.
+•	A native thread (OS-level thread) is created via system calls.
+
+Step 3: JVM Calls run() Method
+•	Once the thread gets CPU time, the JVM internally calls the run() method.
+•	If the thread was created by extending Thread, run() is executed directly.
+•	If created using Runnable, the Thread object internally calls the run() method of the Runnable instance.
+
+Diagram Representation
+Main Thread
+    ├──> Creates New Thread Object
+    ├──> Calls t1.start()
+    ├──> JVM Requests OS to create a new thread
+    ├──> OS Schedules thread for execution
+    ├──> JVM Internally Calls run()
+    └──> Thread Execution Begins
+
+Key JVM Internals
+•	The Java Virtual Machine (JVM) does not control thread scheduling; it relies on the underlying OS scheduler.
+•	The start() method does not guarantee immediate execution of the thread. The OS decides when to run it.
+•	If you call run() directly instead of start(), it behaves like a normal method and does not create a new thread.
+
