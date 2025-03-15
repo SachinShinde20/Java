@@ -1,6 +1,8 @@
 class Printer{
-    public synchronized void print(String user, int copyNo){
-        System.out.println(user+" Using the Printer, No of copy: "+copyNo);
+    public synchronized void print(String user, int noOfCopies){
+        for (int i=1; i<=noOfCopies; i++) {
+            System.out.println(user+" Using the Printer | No of copy: "+i);
+        }
     }
 }
 
@@ -15,24 +17,17 @@ class Users extends  Thread{
 
     @Override
     public void run(){
-        for (int i=1; i<=noOfCopies; i++) {
-            printer.print(Thread.currentThread().getName(), i);
-            try {
-                sleep(250);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        printer.print(Thread.currentThread().getName(), noOfCopies);
     }
 }
 
-public class PrinterExample1 {
+public class PrinterExample3 {
     public static void main(String[] args) {
         Printer printer = new Printer();
 
         Users user1 = new Users(printer, 20);
-        Users user2 = new Users(printer, 20);
-        Users user3 = new Users(printer, 20);
+        Users user2 = new Users(printer, 25);
+        Users user3 = new Users(printer, 12);
 
         user1.setName("Alya");
         user2.setName("Radhika");
@@ -49,5 +44,6 @@ public class PrinterExample1 {
         } catch (InterruptedException e) {
             System.err.println("[Error] Thread interrupted: " + e.getMessage());
         }
+        System.out.println("\nPrintOut Operation Completed");
     }
 }

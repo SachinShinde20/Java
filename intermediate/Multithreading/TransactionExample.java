@@ -24,12 +24,12 @@ class ATM {
                 " | Remaining Balance: ₹" + balance);
     }
 
-    // 🔒 Synchronized getter methods to ensure thread-safe reads
-    public synchronized int getBalance() {
+//    withdraw() method is already synchronized, So It properly protects the shared variables (balance and transactionId)
+    public int getBalance() {
         return balance;
     }
 
-    public synchronized int getTransactionId() {
+    public int getTransactionId() {
         return transactionId;
     }
 }

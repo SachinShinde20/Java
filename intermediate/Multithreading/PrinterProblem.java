@@ -15,21 +15,18 @@ class Users extends  Thread{
 
     @Override
     public void run(){
-        // Allows a thread to finish its task and then to gives access to a new Thread
-        synchronized (Printer.class){
-            for (int i=1; i<=noOfCopies; i++) {
-                printer.print(Thread.currentThread().getName(), i);
-                try {
-                    sleep(250);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+        for (int i=1; i<=noOfCopies; i++) {
+            printer.print(Thread.currentThread().getName(), i);
+            try {
+                sleep(250);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     }
 }
 
-public class PrinterExample2 {
+public class PrinterProblem {
     public static void main(String[] args) {
         Printer printer = new Printer();
 
