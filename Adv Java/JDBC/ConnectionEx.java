@@ -39,10 +39,19 @@ public class ConnectionEx {
 
             // Process result set and print data
             while (resultSet.next()) {
+                // Fetching data Using ColumnLabel
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 int mobileNo = resultSet.getInt("mobileNo");
+
+            /*
+                // We can Also fetch data Using the ColumnIndex
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                String email = resultSet.getString(3);
+                int mobileNo = resultSet.getInt(4);
+            */
 
                 System.out.println(id + "\t" + name + "\t" + email + "\t" + mobileNo);
             }
