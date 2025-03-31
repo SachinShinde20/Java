@@ -1,3 +1,5 @@
+package StatementDemo;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -48,7 +50,6 @@ public class PreparedStatementDemo {
             // Executing the INSERT query
             preparedStatement.executeUpdate();
             System.out.println("\n✅ Record inserted successfully!");
-
         } catch (SQLException e) {
             System.out.println("❌ SQL Exception occurred!");
             e.printStackTrace();
