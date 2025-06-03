@@ -61,8 +61,8 @@ class Introduction {
         double dd = (double) ll * 9;
 
         System.out.println("999999999 * 9 Result in: 8,99,99,99,991");
-        System.out.println("Float: " + ff);
-        System.out.println("Double: " + dd);
+        System.out.println("Float: " + ff); // Float: 9.0E9
+        System.out.println("Double: " + dd); // Double: 8.999999991E9
 
         /*********************************
          * Rules of Type Promotion
