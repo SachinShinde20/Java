@@ -11,12 +11,12 @@ public class Introduction_2 {
          * }
          */
         int num = 10;
-        if (num > 0) {
-            System.out.println("The number is positive.");
+        if (num == 0) {
+            System.out.println("The number is zero.");
         } else if (num < 0) {
             System.out.println("The number is negative.");
         } else {
-            System.out.println("The number is zero.");
+            System.out.println("The number is positive.");
         }
 
         // 2. Ternary Operator Example
@@ -96,5 +96,32 @@ public class Introduction_2 {
         for (int n : numbers) {
             System.out.println("Enhanced for loop value: " + n);
         }
+
+        // 8. Loop with Keywords
+        /*
+         * The continue keyword is used to skip the current iteration of a loop and
+         * immediately jump to the next iteration. It does not terminate the loop
+         * entirely.
+         * The break keyword is used to terminate the entire loop immediately. Once
+         * break is executed, the loop stops, and the program's execution continues with
+         * the statement immediately following the loop.
+         */
+        a = 1;
+        while (a != 12) {
+            if (a == 7) {
+                a++;
+                System.out.println("Continue");
+                continue;
+            }
+
+            System.out.println(a);
+            a++;
+
+            if (a == 9) {
+                System.out.println("Break");
+                break;
+            }
+        }
+        // Difference between continue, break and return?
     }
 }
