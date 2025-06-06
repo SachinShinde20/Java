@@ -1,21 +1,18 @@
 class Demo {
-    public static String str() {
-        String s = "Inside The Demo";
-        return s;
-    }
+    public static String str = "\tInside The Demo Class";
 }
 
 public class Constructor_Ex {
     // Constructor
     Constructor_Ex() {
-        System.out.println("\nIn Constructor");
-        System.out.println(Demo.str());
+        System.out.println("\nConstructor Called");
+        System.out.println(Demo.str);
     }
 
     // Normal Method
     public void Constructor_Ex() {
-        System.out.println("\nIn Normal Method");
-        System.out.println(Demo.str());
+        System.out.println("\nNormal Method Callled");
+        System.out.println(Demo.str);
     }
 
     public static void main(String[] args) {
@@ -23,3 +20,11 @@ public class Constructor_Ex {
         cEx.Constructor_Ex();
     }
 }
+/*
+ * ### Output:
+ * In Constructor
+ * Inside The Demo
+ * 
+ * In Normal Method
+ * Inside The Demo
+ */
