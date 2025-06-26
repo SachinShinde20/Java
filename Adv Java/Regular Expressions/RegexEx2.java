@@ -46,5 +46,6 @@ class RegexEx2 {
         }
 
         System.out.println("✅ Login successful!");
+        sc.close();
     }
 }
